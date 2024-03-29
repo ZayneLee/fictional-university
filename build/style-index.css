@@ -1,6 +1,3 @@
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./css/style.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************/
 /* 3rd party packages */
 /* SASS and Global'ish Stuff */
 body {
@@ -76,6 +73,7 @@ li {
   .p-top-large {
     padding-top: 3.5rem;
   }
+
   .p-bottom-large {
     padding-bottom: 3.5rem;
   }
@@ -197,6 +195,15 @@ li {
   text-decoration: underline;
 }
 
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -212,6 +219,7 @@ li {
   height: 24px;
   border: 0.25rem solid rgba(0, 0, 0, 0.2);
   border-top-color: black;
+  -webkit-animation: spin 1s infinite linear;
   animation: spin 1s infinite linear;
 }
 
@@ -327,32 +335,39 @@ li {
   .row {
     margin-right: -50px;
   }
+
   .one-half,
-  .one-third,
-  .two-thirds,
-  .one-fourth,
-  .one-fifth,
-  .one-sixth {
+.one-third,
+.two-thirds,
+.one-fourth,
+.one-fifth,
+.one-sixth {
     padding-bottom: 0;
     float: left;
     box-sizing: border-box;
     padding-right: 50px;
   }
+
   .two-thirds {
     width: 66.66%;
   }
+
   .one-half {
     width: 50%;
   }
+
   .one-third {
     width: 33.33%;
   }
+
   .one-quarter {
     width: 25%;
   }
+
   .one-fifth {
     width: 20%;
   }
+
   .one-sixth {
     width: 16.66%;
   }
@@ -600,7 +615,7 @@ body.login {
 
 @media (min-width: 635px) {
   .edit-note,
-  .delete-note {
+.delete-note {
     position: relative;
     top: -12px;
   }
@@ -663,7 +678,17 @@ body.login {
 
 .note-active-field {
   border: 1px solid #ddd;
-  animation: pulseBorder 0.75s alternate infinite;
+  -webkit-animation: pulseBorder 0.75s alternate infinite;
+          animation: pulseBorder 0.75s alternate infinite;
+}
+
+@-webkit-keyframes pulseBorder {
+  0% {
+    border: 1px solid #fff;
+  }
+  100% {
+    border: 1px solid #ccc;
+  }
 }
 
 @keyframes pulseBorder {
